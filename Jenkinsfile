@@ -7,19 +7,22 @@ pipeline {
         pollSCM('*/2 * * * *')
         }
 
-    stages('Compile the code') {
+    stages {
+
+    stage('Compile the code') {
         steps {
-            sh 'compile code'
+            sh 'echo compile code'
         }
     }
-    stages('Check the code quality') {
+    stage('Check the code quality') {
             steps {
-                sh 'check the code quality'
+                sh 'echo check the code quality'
             }
         }
-    stages('Test cases') {
+    stage('Test cases') {
             steps {
-                sh 'Test cases'
+                sh 'echo Test cases'
             }
         }
+     }
 }
