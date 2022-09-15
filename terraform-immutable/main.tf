@@ -1,5 +1,5 @@
 module "app-module" {
-  source = "git::https://github.com/kartikayjoshi7/terraform-immutable-app-module.git"
+  source = "git::https://github.com/kartikayjoshi7/terraform-mutable-app-module.git"
   INSTANCE_COUNT = var.INSTANCE_COUNT
   INSTANCE_TYPE = var.INSTANCE_TYPE
   COMPONENT = var.COMPONENT
@@ -8,4 +8,6 @@ module "app-module" {
   APP_PORT = 8080
   LB_RULE_PRIORITY = 100
   LB_PRIVATE = true
+  MIN_SIZE= var.MIN_SIZE
+  MAX_SIZE= var.MAX_SIZE
 }
